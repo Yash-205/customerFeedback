@@ -1,0 +1,11 @@
+source,content,rating,timestamp,metadata
+amazon,"The battery life on this phone is terrible. It barely lasts 4 hours with normal use. I have to charge it multiple times a day which is really frustrating.",2.0,2024-01-15T10:30:00Z,"{""verified_purchase"": true, ""helpful_votes"": 45}"
+amazon,"Camera quality is amazing in daylight but struggles in low light. The night mode helps but photos are still grainy. Overall decent for the price point.",3.5,2024-01-15T14:20:00Z,"{""verified_purchase"": true, ""helpful_votes"": 23}"
+reddit,"Anyone else having battery drain issues? Mine dies so fast even on standby. Tried all the battery saving tips but nothing works. Really disappointed.",1.5,2024-01-16T09:15:00Z,"{""upvotes"": 127, ""subreddit"": ""r/smartphones""}"
+app_store,"UI is confusing and not intuitive at all. Takes forever to find basic settings. The menu structure makes no sense. Needs a complete redesign.",2.0,2024-01-16T16:45:00Z,"{""version"": ""2.1.0"", ""device"": ""iPhone 14""}"
+amazon,"Battery drains incredibly fast during video calls. Can't even finish a 30 minute call without plugging in. This is a major issue for remote work.",1.0,2024-01-17T11:00:00Z,"{""verified_purchase"": true, ""helpful_votes"": 89}"
+reddit,"The camera app crashes frequently when switching between photo and video mode. Lost so many important moments because of this bug.",2.5,2024-01-17T13:30:00Z,"{""upvotes"": 56, ""subreddit"": ""r/techsupport""}"
+app_store,"Love the camera features! Portrait mode is incredible and the AI enhancement really works. Best camera I've used on a phone.",5.0,2024-01-18T08:20:00Z,"{""version"": ""2.1.0"", ""device"": ""iPhone 15""}"
+amazon,"The interface is so cluttered. Too many menus and submenus. Simple tasks require 5-6 taps. Very frustrating user experience.",2.0,2024-01-18T15:10:00Z,"{""verified_purchase"": true, ""helpful_votes"": 34}"
+reddit,"Battery issue is getting worse with each update. Used to last a full day, now I'm lucky to get 6 hours. What happened?",1.5,2024-01-19T10:45:00Z,"{""upvotes"": 203, ""subreddit"": ""r/smartphones""}"
+app_store,"Settings menu is a maze. Can't find notification controls. Why is everything buried so deep? Please simplify the UI.",2.5,2024-01-19T14:00:00Z,"{""version"": ""2.0.5"", ""device"": ""iPhone 13""}"}

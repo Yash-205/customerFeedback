@@ -1,0 +1,15 @@
+uvicorn
+fastapi
+dspy-ai
+qdrant-client
+neo4j
+langgraph
+langchain
+langchain-community
+langchain-core
+langchain-groq
+sentence-transformers
+requests
+pydantic
+python-dotenv
+scikit-learn

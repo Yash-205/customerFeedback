@@ -1,0 +1,11 @@
+source,content,rating,timestamp,metadata
+reddit,"Battery optimization settings don't actually work. Tried every combination. Still drains fast. False advertising on battery life specs.",1.5,2024-01-24T08:00:00Z,"{""upvotes"": 234, ""subreddit"": ""r/smartphones""}"
+app_store,"Camera app is slow to launch. Miss quick photo opportunities. Takes 3-4 seconds to open which is too long for spontaneous shots.",3.0,2024-01-24T11:30:00Z,"{""version"": ""2.0.9"", ""device"": ""iPhone 14""}"
+amazon,"Menu icons are not descriptive. Have to guess what each button does. Tooltips would help. Very unintuitive design choices.",2.5,2024-01-24T15:45:00Z,"{""verified_purchase"": true, ""helpful_votes"": 51}"
+reddit,"Standby battery drain is unacceptable. Loses 30% overnight with all apps closed. Something is running in background constantly.",1.0,2024-01-25T09:20:00Z,"{""upvotes"": 178, ""subreddit"": ""r/techsupport""}"
+app_store,"Portrait mode edge detection is excellent. Creates professional looking photos. Depth effect is very natural. Impressed!",5.0,2024-01-25T12:00:00Z,"{""version"": ""2.1.0"", ""device"": ""iPhone 15 Pro Max""}"
+amazon,"Dark mode implementation is inconsistent. Some screens are dark, others are bright white. Hurts eyes switching between them.",3.0,2024-01-25T16:15:00Z,"{""verified_purchase"": true, ""helpful_votes"": 72}"
+reddit,"Camera quality degrades after software updates. Photos were crisp before, now they're processed and artificial looking.",2.5,2024-01-26T10:40:00Z,"{""upvotes"": 95, ""subreddit"": ""r/photography""}"
+app_store,"Search function in settings doesn't work properly. Can't find features even when typing exact names. Very frustrating.",2.0,2024-01-26T13:55:00Z,"{""version"": ""2.0.9"", ""device"": ""iPhone 13""}"
+amazon,"Fast charging damages battery health quickly. Dropped to 90% capacity in 4 months. Should warn users about this tradeoff.",2.5,2024-01-26T17:20:00Z,"{""verified_purchase"": true, ""helpful_votes"": 134}"
+reddit,"Overall the product has potential but needs serious improvements in battery life, UI design, and camera consistency. Hope they listen to feedback.",3.0,2024-01-27T09:00:00Z,"{""upvotes"": 267, ""subreddit"": ""r/productreviews""}"}

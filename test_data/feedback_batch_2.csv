@@ -1,0 +1,11 @@
+source,content,rating,timestamp,metadata
+amazon,"Charging port feels loose after just 2 months. Cable keeps falling out. Build quality is disappointing for this price.",2.5,2024-01-20T09:30:00Z,"{""verified_purchase"": true, ""helpful_votes"": 67}"
+reddit,"UI redesign made everything worse. Old version was better. Why change what wasn't broken? Bring back the classic interface!",2.0,2024-01-20T12:15:00Z,"{""upvotes"": 145, ""subreddit"": ""r/productfeedback""}"
+app_store,"Camera zoom is impressive. Can capture details from far away. Video stabilization works great too. Really happy with photo quality.",4.5,2024-01-21T08:45:00Z,"{""version"": ""2.1.0"", ""device"": ""iPhone 14 Pro""}"
+amazon,"Battery percentage drops 10% in minutes then stays stable for hours. The indicator is completely unreliable. Can't trust the readings.",2.0,2024-01-21T11:20:00Z,"{""verified_purchase"": true, ""helpful_votes"": 92}"
+reddit,"Navigation is terrible. Back button doesn't work consistently. Sometimes it closes the app instead of going back one screen.",2.5,2024-01-21T15:40:00Z,"{""upvotes"": 78, ""subreddit"": ""r/techsupport""}"
+app_store,"Low light camera performance is poor. Photos come out blurry and noisy. Night mode doesn't help much. Disappointing.",3.0,2024-01-22T09:00:00Z,"{""version"": ""2.0.8"", ""device"": ""iPhone 13 Pro""}"
+amazon,"Phone gets extremely hot during charging. Battery health already dropped to 95% in 3 months. Concerned about long-term durability.",2.0,2024-01-22T13:25:00Z,"{""verified_purchase"": true, ""helpful_votes"": 156}"
+reddit,"The gesture controls are confusing. Accidentally trigger actions all the time. Need better visual feedback for gestures.",2.5,2024-01-22T16:50:00Z,"{""upvotes"": 89, ""subreddit"": ""r/UXDesign""}"
+app_store,"Camera filters are fun and creative. Love the variety of options. Makes photography enjoyable. Great addition to the app.",4.0,2024-01-23T10:15:00Z,"{""version"": ""2.1.0"", ""device"": ""iPhone 15 Pro""}"
+amazon,"UI font size is too small. Hard to read on smaller screens. No option to increase text size in settings. Accessibility issue.",2.5,2024-01-23T14:30:00Z,"{""verified_purchase"": false, ""helpful_votes"": 43}"}
