@@ -1,0 +1,16 @@
+{
+  "name": "customerfeedback",
+  "version": "1.0.0",
+  "description": "Experience the power of **Recursive Language Modeling (RLM)** and **Agentic Graph RAG**. This system turns fragmented customer feedback into high-level strategic intelligence using a 5-layer autonomous stack.",
+  "scripts": {
+    "dev:frontend": "cd web-app && npm run dev",
+    "dev:backend": "cd ai-engine && source venv/bin/activate && uvicorn app.main:app --reload",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "install:frontend": "cd web-app && npm install",
+    "install:backend": "cd ai-engine && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt",
+    "postinstall": "npm run install:backend && npm run install:frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
