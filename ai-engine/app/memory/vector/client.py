@@ -79,10 +79,10 @@ class VectorDatabase:
             for hit in results
         ]
 
-    def scroll_by_metadata(self, key: str, value: str, limit: int = 100) -> List[str]:
+    def scroll_by_metadata(self, key: str, value: str, limit: int = 100) -> List[Dict[str, Any]]:
         """
         Scrolls through the collection to find points matching a metadata filter.
-        Returns a list of content strings.
+        Returns a list of payload dictionaries.
         """
         filter_condition = models.Filter(
             must=[
@@ -104,4 +104,4 @@ class VectorDatabase:
             with_vectors=False
         )
         
-        return [p.payload.get("content") for p in points]
+        return [p.payload for p in points]

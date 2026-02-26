@@ -30,11 +30,11 @@ class GlobalAggregator:
         feedback_data = [
             {
                 'content': s.get('content', ''),
-                'rating': s.get('metadata', {}).get('rating', 3.0),
-                'source': s.get('metadata', {}).get('source', 'summary-store'),
-                'timestamp': s.get('metadata', {}).get('timestamp')
+                'rating': s.get('rating', 3.0),
+                'source': s.get('source', 'summary-store'),
+                'timestamp': s.get('timestamp')
             }
-            for m in summaries if (s := m)
+            for s in summaries
         ]
         
         analysis = self.rlm.analyze(feedback_data)
