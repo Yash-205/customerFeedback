@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: customer-intelligence-api
+    env: python
+    region: ohio
+    plan: free
+    repo: https://github.com/yashagarwal/customerFeedback # Update if your repo URL is different
+    branch: main
+    rootDir: ai-engine
+    buildCommand: |
+      pip install -U pip
+      pip install -r requirements.txt
+    startCommand: gunicorn app.main:app --workers 2 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: QDRANT_URL_ENDPOINT
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: NEO4J_USERNAME
+        sync: false
+      - key: NEO4J_PASSWORD
+        sync: false
+      - key: NEO4J_URL_ENDPOINT
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.0
