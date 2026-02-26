@@ -1,6 +1,6 @@
 from langchain_core.tools import tool
 from typing import List, Dict
-from sentence_transformers import SentenceTransformer
+
 from app.memory.vector.client import VectorDatabase
 from app.memory.graph.client import Neo4jClient
 from app.processing.aggregator import GlobalAggregator
@@ -9,7 +9,13 @@ from app.processing.aggregator import GlobalAggregator
 vector_db = VectorDatabase()
 graph_db = Neo4jClient()
 aggregator = GlobalAggregator()
-embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+def get_embedding_model():
+    from sentence_transformers import SentenceTransformer
+    global _embedding_model
+    if '_embedding_model' not in globals():
+        print("⏳ Loading embedding model into memory (tools)...")
+        _embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+    return _embedding_model
 
 @tool
 def search_vector_memory(query: str) -> str:
@@ -18,7 +24,8 @@ def search_vector_memory(query: str) -> str:
     Use this to find specific quotes, evidence, or detailed user stories.
     """
     # 1. Convert text to vector
-    query_vector = embedding_model.encode([query])[0].tolist()
+    model = get_embedding_model()
+    query_vector = model.encode([query])[0].tolist()
     
     # 2. Search Qdrant
     results = vector_db.search(query_vector, limit=5)

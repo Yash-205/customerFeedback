@@ -1,11 +1,10 @@
 import dspy
 from dspy.predict.rlm import RLM
 from typing import List, Dict, Any
-from sentence_transformers import SentenceTransformer
+
 import numpy as np
 from sklearn.cluster import AgglomerativeClustering
 import os
-
 # ========================================================================
 # DSPy Signatures for RLM
 # ========================================================================
@@ -40,7 +39,14 @@ class RLMHelperTools:
     """Helper functions that dspy.RLM can use for feedback analysis."""
     
     def __init__(self):
-        self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+        pass
+        
+    def _get_embedding_model(self):
+        from sentence_transformers import SentenceTransformer
+        if not hasattr(self, '_embedding_model'):
+            print("⏳ Loading embedding model into memory (RLM_Agent)...")
+            self._embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+        return self._embedding_model
     
     def group_by_similarity(self, texts: List[str], threshold: float = 0.7) -> List[List[str]]:
         """Group similar texts using hierarchical clustering.
@@ -56,7 +62,8 @@ class RLMHelperTools:
             return [texts]
         
         # Generate embeddings
-        embeddings = self.embedding_model.encode(texts)
+        model = self._get_embedding_model()
+        embeddings = model.encode(texts)
         
         # Hierarchical clustering
         clustering = AgglomerativeClustering(

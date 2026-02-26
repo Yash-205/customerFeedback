@@ -1,7 +1,7 @@
 from typing import List, Dict
 from collections import defaultdict
 from langchain_core.documents import Document
-from sentence_transformers import SentenceTransformer
+
 from app.api.schemas import NormalizedFeedback
 from app.processing.chunker import FeedbackChunker
 from app.memory.vector.client import VectorDatabase
