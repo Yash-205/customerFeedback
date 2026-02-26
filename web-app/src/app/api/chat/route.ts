@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
-const BACKEND_URL = process.env.AI_ENGINE_URL || "http://127.0.0.1:8000";
+const isProd = process.env.NODE_ENV === 'production';
+const BACKEND_URL = process.env.AI_ENGINE_URL || (isProd ? "https://customer-intelligence-api-gd7z.onrender.com" : "http://127.0.0.1:8000");
 
 const fs = require('fs');
 const path = require('path');
