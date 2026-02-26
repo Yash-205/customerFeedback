@@ -14,8 +14,13 @@ class IngestionService:
         self.vector_db = VectorDatabase()
         self.rlm = RLMFeedbackAnalyzer()  # Using dspy.RLM for code-based analysis
         self.graph_db = Neo4jClient()
-        # Load local embedding model
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+
+    def get_model(self):
+        from sentence_transformers import SentenceTransformer
+        if not hasattr(self, '_model'):
+            print("⏳ Loading embedding model into memory...")
+            self._model = SentenceTransformer('all-MiniLM-L6-v2')
+        return self._model
 
     def ingest(self, feedback_items: List[NormalizedFeedback]):
         # 1. Chunking
@@ -93,7 +98,7 @@ class IngestionService:
         print(f"Upserting {len(documents)} chunks + {len(summary_documents)} summaries...")
         
         texts = [doc.page_content for doc in all_docs]
-        embeddings = self.model.encode(texts).tolist()
+        embeddings = self.get_model().encode(texts).tolist()
 
         self.vector_db.upsert_documents(all_docs, embeddings)
         
@@ -107,5 +112,5 @@ class IngestionService:
         }
 
     def search(self, query: str, limit: int = 5):
-        query_vector = self.model.encode([query])[0].tolist()
+        query_vector = self.get_model().encode([query])[0].tolist()
         return self.vector_db.search(query_vector, limit)
