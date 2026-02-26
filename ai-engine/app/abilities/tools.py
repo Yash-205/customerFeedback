@@ -10,11 +10,13 @@ vector_db = VectorDatabase()
 graph_db = Neo4jClient()
 aggregator = GlobalAggregator()
 def get_embedding_model():
+    import torch
     from sentence_transformers import SentenceTransformer
     global _embedding_model
     if '_embedding_model' not in globals():
         print("⏳ Loading embedding model into memory (tools)...")
-        _embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+        torch.set_num_threads(1)
+        _embedding_model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
     return _embedding_model
 
 @tool

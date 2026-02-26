@@ -42,10 +42,12 @@ class RLMHelperTools:
         pass
         
     def _get_embedding_model(self):
+        import torch
         from sentence_transformers import SentenceTransformer
         if not hasattr(self, '_embedding_model'):
             print("⏳ Loading embedding model into memory (RLM_Agent)...")
-            self._embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+            torch.set_num_threads(1)
+            self._embedding_model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
         return self._embedding_model
     
     def group_by_similarity(self, texts: List[str], threshold: float = 0.7) -> List[List[str]]:

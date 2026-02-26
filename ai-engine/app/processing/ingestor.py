@@ -16,10 +16,12 @@ class IngestionService:
         self.graph_db = Neo4jClient()
 
     def get_model(self):
+        import torch
         from sentence_transformers import SentenceTransformer
         if not hasattr(self, '_model'):
             print("⏳ Loading embedding model into memory...")
-            self._model = SentenceTransformer('all-MiniLM-L6-v2')
+            torch.set_num_threads(1) # Limit CPU threads to avoid OOM
+            self._model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
         return self._model
 
     def ingest(self, feedback_items: List[NormalizedFeedback]):
