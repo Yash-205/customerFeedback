@@ -33,6 +33,7 @@ class VectorDatabase:
             self.client.create_collection(
                 collection_name=self.collection_name,
                 vectors_config=models.VectorParams(
+                    size=384,
                     distance=models.Distance.COSINE
                 )
             )
