@@ -19,7 +19,12 @@ class VectorDatabase:
 
         if url and api_key:
             print(f"🚀 Connecting to Qdrant Cloud: {url}...")
-            self.client = QdrantClient(url=url, api_key=api_key)
+            try:
+                self.client = QdrantClient(url=url, api_key=api_key)
+                self.client.get_collections() # Test connection
+            except Exception as e:
+                print(f"⚠️ Failed to connect to Qdrant Cloud ({e}). Falling back to In-Memory.")
+                self.client = QdrantClient(":memory:")
         else:
             print("⚠️ No Credentials found. Using In-Memory Qdrant.")
             self.client = QdrantClient(":memory:")
@@ -80,10 +85,10 @@ class VectorDatabase:
             for hit in results
         ]
 
-    def scroll_by_metadata(self, key: str, value: str, limit: int = 100) -> List[Dict[str, Any]]:
+    def scroll_by_metadata(self, key: str, value: str, limit: int = 100) -> List[str]:
         """
         Scrolls through the collection to find points matching a metadata filter.
-        Returns a list of payload dictionaries.
+        Returns a list of content strings.
         """
         filter_condition = models.Filter(
             must=[
@@ -105,4 +110,4 @@ class VectorDatabase:
             with_vectors=False
         )
         
-        return [p.payload for p in points]
+        return [p.payload.get("content") for p in points]

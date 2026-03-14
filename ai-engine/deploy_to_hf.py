@@ -16,13 +16,10 @@ try:
         folder_path=FOLDER_TO_UPLOAD,
         repo_id=REPO_ID,
         repo_type=REPO_TYPE,
-        commit_message="Deploying AI Engine from local repo",
+        commit_message="Deploying AI Engine with Qdrant Fallback Fix",
         ignore_patterns=["venv/*", "__pycache__/*", ".git/*", ".env", "*.pyc"]
     )
     print("✅ Deployment triggered successfully!")
     print(f"Check your Hugging Face Space to see the build progress: https://huggingface.co/spaces/{REPO_ID}")
 except Exception as e:
     print(f"❌ Deployment failed: {e}")
-    print("\nIf you got an authentication error, please run:")
-    print("   ./venv/bin/python -m huggingface_hub.cli.cli login")
-    print("And paste your Hugging Face Access Token (with WRITE permissions).")

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 const BACKEND_URL = process.env.AI_ENGINE_URL || "http://127.0.0.1:8000";
+
 export async function POST(request: Request) {
     try {
         const body = await request.json();
